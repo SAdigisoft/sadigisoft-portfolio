@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAdigisoft Technologies | Digital Craftsmanship Portfolio</title>
+    <meta name="description"
+        content="Portfolio of SAdigisoft Technologies - Premium Web Development and Digital Design Agency.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0C14;
+            --accent: #E84522;
+            --navy: #1E3A5F;
+            --gold: #B8943A;
+            --text-light: #F4F4F9;
+            --text-muted: #A0A0A0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, var(--navy) 0%, var(--primary) 70%);
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        span.highlight {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            background: rgba(184, 148, 58, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, var(--primary));
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .view-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-top: auto;
+        }
+
+        .view-project svg {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .view-project svg {
+            transform: translateX(5px);
+        }
+
+        /* Placeholder Styles */
+        .placeholder {
+            filter: grayscale(1);
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .placeholder:hover {
+            transform: none;
+            border-color: var(--glass-border);
+            background: var(--glass);
+            box-shadow: none;
+        }
+
+        .badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container hero-content">
+            <span class="logo-text animate">SAdigisoft Technologies</span>
+            <h1 class="animate delay-1">Crafting <span class="highlight">Exceptional</span> Digital Experiences</h1>
+            <p class="subtitle animate delay-2">We build premium websites and digital solutions for visionary brands and
+                businesses worldwide.</p>
+        </div>
+    </header>
+
+    <main class="portfolio-section" id="work">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Selected works from our digital design and development studio</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Live Project: Sindoor -->
+                <a href="sindoor/index.html" class="project-card">
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1470&auto=format&fit=crop');">
+                        <!-- We'll use a placeholder image for now, but a screenshot would be better later -->
+                        <div class="badge">Live Demo</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Fashion & Retail</span>
+                        <h3 class="project-title">Sindoor Boutique</h3>
+                        <p class="project-description">Premium boutique web experience featuring luxury slideshows and
+                            cultural saffron design aesthetics.</p>
+                        <div class="view-project">
+                            View Showcase
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Placeholder 1 -->
+                <div class="project-card placeholder">
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop');">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Corporate</span>
+                        <h3 class="project-title">Project Alpha</h3>
+                        <p class="project-description">A high-performance fintech dashboard designed for clarity and
+                            scalability. Under development.</p>
+                        <div class="view-project" style="color: var(--text-muted);">
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 2 -->
+                <div class="project-card placeholder">
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop');">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">E-Commerce</span>
+                        <h3 class="project-title">Project Delta</h3>
+                        <p class="project-description">Next-generation shopping experience with seamless mobile-first
+                            interactions.</p>
+                        <div class="view-project" style="color: var(--text-muted);">
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SAdigisoft Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
