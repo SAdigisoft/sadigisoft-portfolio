@@ -20,677 +20,7 @@
     }
 
     /* Image base URLs */
-    /* https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1600&auto=format&fit=crop — bridal red lehenga */
-    /* https://images.unsplash.com/photo-1610030469601-137b34007f3f?q=80&w=1600&auto=format&fit=crop */
-    /* https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?q=80&w=1600&auto=format&fit=crop */
-    /* https://images.unsplash.com/photo-1519197924294-4ba991a11128?q=80&w=1600&auto=format&fit=crop */
-    /* https://images.unsplash.com/photo-1604713136279-7221cfdd07e5?q=80&w=1600&auto=format&fit=crop */
-    /* https://images.unsplash.com/photo-1544026354-979a0b063806?q=80&w=1600&auto=format&fit=crop */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--deep);
-      color: var(--cream);
-      font-family: 'Jost', sans-serif;
-      overflow-x: hidden;
-    }
-
-    .topbadge {
-      background: var(--crimson);
-      color: #fff;
-      text-align: center;
-      padding: 9px;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-family: 'Jost', sans-serif;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 60px;
-      border-bottom: 1px solid rgba(201, 148, 58, 0.12);
-      background: rgba(13, 10, 8, 0.97);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(6px);
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 300;
-      letter-spacing: 4px;
-      color: var(--gl);
-      text-transform: uppercase;
-    }
-
-    .logo span {
-      color: var(--crimson);
-      font-style: italic;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 34px;
-    }
-
-    nav ul a {
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 300;
-      transition: color .3s;
-    }
-
-    nav ul a:hover {
-      color: var(--gold);
-    }
-
-    .ncta {
-      background: var(--crimson);
-      color: #fff !important;
-      padding: 10px 22px;
-    }
-
-    .nphone {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 1px;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 90vh;
-    }
-
-    .hero-left {
-      padding: 80px 70px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0D0A08 0%, #1A1008 100%);
-    }
-
-    .hero-left::after {
-      content: 'SINDOOR';
-      position: absolute;
-      bottom: -20px;
-      right: -10px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 130px;
-      font-weight: 300;
-      color: rgba(201, 148, 58, 0.04);
-      letter-spacing: 10px;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: 5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .eyebrow::before {
-      content: '';
-      width: 36px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 5.5vw, 76px);
-      font-weight: 300;
-      line-height: 1.08;
-      margin-bottom: 22px;
-    }
-
-    h1 em {
-      color: var(--gl);
-      font-style: italic;
-      display: block;
-    }
-
-    .hsub {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.9;
-      font-weight: 300;
-      max-width: 400px;
-      margin-bottom: 42px;
-    }
-
-    .hbtns {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .btng {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 15px 34px;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      transition: all .4s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btng:hover {
-      background: var(--gold);
-      color: var(--deep);
-    }
-
-    .btnt {
-      color: var(--cream);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(245, 237, 216, 0.25);
-      padding-bottom: 3px;
-    }
-
-    .hstats {
-      display: flex;
-      gap: 38px;
-      margin-top: 50px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(201, 148, 58, 0.12);
-    }
-
-    .sn {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .sl {
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* Hero right — tall image + 2 small */
-    .hero-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 3px;
-    }
-
-    .hi {
-      position: relative;
-      overflow: hidden;
-      background: #1A1008;
-    }
-
-    .hi img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .7s ease;
-    }
-
-    .hi:hover img {
-      transform: scale(1.06);
-    }
-
-    .hi:first-child {
-      grid-column: 1;
-      grid-row: 1/3;
-    }
-
-    .itag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--crimson);
-      color: #fff;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-    }
-
-    .ilbl {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 18px 16px;
-      background: linear-gradient(to top, rgba(13, 10, 8, 0.88), transparent);
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--cream);
-      text-transform: uppercase;
-    }
-
-    /* MARQUEE */
-    .marquee {
-      background: var(--crimson);
-      padding: 13px 0;
-      overflow: hidden;
-    }
-
-    .mtrack {
-      display: flex;
-      animation: mscroll 26s linear infinite;
-      white-space: nowrap;
-    }
-
-    .mtrack span {
-      font-size: 10px;
-      letter-spacing: 4px;
-      color: rgba(255, 255, 255, 0.88);
-      text-transform: uppercase;
-      padding: 0 36px;
-    }
-
-    .mtrack span::before {
-      content: '✦';
-      margin-right: 36px;
-      font-size: 8px;
-    }
-
-    @keyframes mscroll {
-      from {
-        transform: translateX(0)
-      }
-
-      to {
-        transform: translateX(-50%)
-      }
-    }
-
-    /* COLLECTIONS GRID */
-    .coll {
-      padding: 90px 60px;
-    }
-
-    .shead {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 42px;
-    }
-
-    .slbl {
-      font-size: 10px;
-      letter-spacing: 5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .slbl::before {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .stitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 44px;
-      font-weight: 300;
-      line-height: 1.1;
-    }
-
-    .stitle em {
-      color: var(--gl);
-      font-style: italic;
-    }
-
-    .vall {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 3px;
-      white-space: nowrap;
-    }
-
-    .cgrid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      grid-template-rows: 320px 280px;
-      gap: 4px;
-    }
-
-    .cc {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: #1A1008;
-    }
-
-    .cc:first-child {
-      grid-row: span 2;
-    }
-
-    .cc img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .7s;
-    }
-
-    .cc:hover img {
-      transform: scale(1.07);
-    }
-
-    .cov {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(13, 10, 8, 0.78) 0%, transparent 55%);
-    }
-
-    .cinfo {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 22px 20px;
-    }
-
-    .ccat {
-      font-size: 9px;
-      letter-spacing: 3px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .cname {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--cream);
-    }
-
-    /* ABOUT SPLIT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 560px;
-    }
-
-    .aimg {
-      position: relative;
-      overflow: hidden;
-      background: #1A1008;
-    }
-
-    .aimg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .aimg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(13, 10, 8, 0.3), transparent);
-      z-index: 1;
-    }
-
-    .acontent {
-      background: var(--wb);
-      padding: 80px 70px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .gpill {
-      display: inline-block;
-      background: rgba(201, 148, 58, 0.1);
-      border: 1px solid rgba(201, 148, 58, 0.3);
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      padding: 8px 20px;
-      margin-bottom: 26px;
-    }
-
-    .abody {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.9;
-      font-weight: 300;
-      margin-bottom: 14px;
-    }
-
-    .svlist {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 24px;
-      margin-top: 32px;
-    }
-
-    .svi {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .svi::before {
-      content: '—';
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* SERVICE CARDS */
-    .svcs {
-      padding: 80px 60px;
-      background: var(--wb);
-    }
-
-    .scards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-      margin-top: 48px;
-    }
-
-    .scard {
-      background: var(--deep);
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .scard-img {
-      height: 260px;
-      overflow: hidden;
-      background: #1A1008;
-    }
-
-    .scard-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .6s;
-    }
-
-    .scard:hover .scard-img img {
-      transform: scale(1.08);
-    }
-
-    .scard-body {
-      padding: 24px 22px;
-    }
-
-    .scard-body h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-
-    .scard-body p {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .sbar {
-      height: 2px;
-      background: linear-gradient(90deg, var(--crimson), var(--gold));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .4s;
-    }
-
-    .scard:hover .sbar {
-      transform: scaleX(1);
-    }
-
-    /* GALLERY STRIP */
-    .gallery {
-      padding: 90px 60px;
-    }
-
-    .gstrip {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      height: 280px;
-      gap: 4px;
-      margin-top: 42px;
-    }
-
-    .gi {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: #1A1008;
-    }
-
-    .gi img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .7s;
-    }
-
-    .gi:hover img {
-      transform: scale(1.1);
-    }
-
-    .ghov {
-      position: absolute;
-      inset: 0;
-      background: rgba(13, 10, 8, 0);
-      display: flex;
-      align-items: flex-end;
-      padding: 14px;
-      transition: background .4s;
-    }
-
-    .gi:hover .ghov {
-      background: rgba(13, 10, 8, 0.65);
-    }
-
-    .glbl {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      color: var(--cream);
-      opacity: 0;
-      transform: translateY(8px);
-      transition: all .4s;
-    }
-
-    .gi:hover .glbl {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* CTA BAND */
-    .cta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 420px;
-    }
-
-    .ctaimg {
-      position: relative;
-      overflow: hidden;
-      background: #1A1008;
-    }
-
-    .ctaimg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .ctaimg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(139, 26, 26, 0.42);
-    }
-
-    .ctatxt {
-      background: var(--crimson);
-      padding: 80px 70px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ctatxt::before {
-      content: '"';
+    /* images/Slideshow1.jpg"';
       position: absolute;
       top: -40px;
       left: 24px;
@@ -828,15 +158,15 @@
     <div class="hero-right">
       <div class="hi">
         <div class="itag">New Collection</div>
-        <img src="https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1600&auto=format&fit=crop" alt="Bridal collection Sindoor Boutique">
+        <img src="images/Slideshow4.jpg" alt="Bridal collection Sindoor Boutique">
         <div class="ilbl">Bridal Collection 2026</div>
       </div>
       <div class="hi">
-        <img src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?q=80&w=1600&auto=format&fit=crop" alt="Party wear Sindoor Boutique">
+        <img src="images/Slideshow4.jpg" alt="Party wear Sindoor Boutique">
         <div class="ilbl">Party Wear</div>
       </div>
       <div class="hi">
-        <img src="https://images.unsplash.com/photo-1604713136279-7221cfdd07e5?q=80&w=1600&auto=format&fit=crop" alt="Designer collection Sindoor Boutique">
+        <img src="images/Slideshow4.jpg" alt="Designer collection Sindoor Boutique">
         <div class="ilbl">Designer Collection</div>
       </div>
     </div>
@@ -865,7 +195,7 @@
     </div>
     <div class="cgrid">
       <div class="cc">
-        <img src="https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1600&auto=format&fit=crop" alt="Bridal lehenga">
+        <img src="images/Slideshow6.jpg" alt="Bridal lehenga">
         <div class="cov"></div>
         <div class="cinfo">
           <div class="ccat">Featured</div>
@@ -873,7 +203,7 @@
         </div>
       </div>
       <div class="cc">
-        <img src="https://images.unsplash.com/photo-1610030469601-137b34007f3f?q=80&w=1600&auto=format&fit=crop" alt="Party wear">
+        <img src="images/Slideshow1.jpg" alt="Party wear">
         <div class="cov"></div>
         <div class="cinfo">
           <div class="ccat">New In</div>
@@ -881,7 +211,7 @@
         </div>
       </div>
       <div class="cc">
-        <img src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?q=80&w=1600&auto=format&fit=crop" alt="Designer collection">
+        <img src="images/Slideshow1.jpg" alt="Designer collection">
         <div class="cov"></div>
         <div class="cinfo">
           <div class="ccat">Collection</div>
@@ -889,7 +219,7 @@
         </div>
       </div>
       <div class="cc">
-        <img src="https://images.unsplash.com/photo-1519197924294-4ba991a11128?q=80&w=1600&auto=format&fit=crop" alt="Sarees">
+        <img src="images/Slideshow1.jpg" alt="Sarees">
         <div class="cov"></div>
         <div class="cinfo">
           <div class="ccat">Traditional</div>
@@ -897,7 +227,7 @@
         </div>
       </div>
       <div class="cc">
-        <img src="https://images.unsplash.com/photo-1544026354-979a0b063806?q=80&w=1600&auto=format&fit=crop" alt="Casual wear">
+        <img src="images/Slideshow1.jpg" alt="Casual wear">
         <div class="cov"></div>
         <div class="cinfo">
           <div class="ccat">Casual</div>
@@ -910,7 +240,7 @@
   <!-- ABOUT -->
   <section class="about">
     <div class="aimg">
-      <img src="https://images.unsplash.com/photo-1610030469601-137b34007f3f?q=80&w=1600&auto=format&fit=crop" alt="Sindoor Boutique store">
+      <img src="images/Slideshow1.jpg" alt="Sindoor Boutique store">
     </div>
     <div class="acontent">
       <div class="gpill">Est. 1989 — Coventry</div>
@@ -943,7 +273,7 @@
     <div class="scards">
       <div class="scard">
         <div class="sbar"></div>
-        <div class="scard-img"><img src="https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1600&auto=format&fit=crop" alt="Bridal wear"></div>
+        <div class="scard-img"><img src="images/Slideshow1.jpg" alt="Bridal wear"></div>
         <div class="scard-body">
           <h3>Bridal Wear</h3>
           <p>Exquisite bridal collections for the most important day of your life. Traditional and contemporary styles
@@ -952,7 +282,7 @@
       </div>
       <div class="scard">
         <div class="sbar"></div>
-        <div class="scard-img"><img src="https://images.unsplash.com/photo-1519197924294-4ba991a11128?q=80&w=1600&auto=format&fit=crop" alt="Party wear"></div>
+        <div class="scard-img"><img src="images/Slideshow1.jpg" alt="Party wear"></div>
         <div class="scard-body">
           <h3>Party & Occasion Wear</h3>
           <p>Stunning outfits for celebrations, functions, and proms. Something for every special occasion.</p>
@@ -960,7 +290,7 @@
       </div>
       <div class="scard">
         <div class="sbar"></div>
-        <div class="scard-img"><img src="https://images.unsplash.com/photo-1544026354-979a0b063806?q=80&w=1600&auto=format&fit=crop" alt="Made to measure">
+        <div class="scard-img"><img src="images/Slideshow1.jpg" alt="Made to measure">
         </div>
         <div class="scard-body">
           <h3>Made to Measure</h3>
@@ -981,32 +311,32 @@
       <a href="#" class="vall">See All →</a>
     </div>
     <div class="gstrip">
-      <div class="gi"><img src="https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1600&auto=format&fit=crop" alt="Collection 1">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 1">
         <div class="ghov">
           <div class="glbl">Bridal</div>
         </div>
       </div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1610030469601-137b34007f3f?q=80&w=1600&auto=format&fit=crop" alt="Collection 2">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 2">
         <div class="ghov">
           <div class="glbl">Party Wear</div>
         </div>
       </div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?q=80&w=1600&auto=format&fit=crop" alt="Collection 3">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 3">
         <div class="ghov">
           <div class="glbl">Designer Suits</div>
         </div>
       </div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1519197924294-4ba991a11128?q=80&w=1600&auto=format&fit=crop" alt="Collection 4">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 4">
         <div class="ghov">
           <div class="glbl">Sarees</div>
         </div>
       </div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1604713136279-7221cfdd07e5?q=80&w=1600&auto=format&fit=crop" alt="Collection 5">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 5">
         <div class="ghov">
           <div class="glbl">Lenghas</div>
         </div>
       </div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1544026354-979a0b063806?q=80&w=1600&auto=format&fit=crop" alt="Collection 6">
+      <div class="gi"><img src="images/Slideshow1.jpg" alt="Collection 6">
         <div class="ghov">
           <div class="glbl">Casual Wear</div>
         </div>
@@ -1017,7 +347,7 @@
   <!-- CTA -->
   <section class="cta">
     <div class="ctaimg">
-      <img src="https://images.unsplash.com/photo-1604713136279-7221cfdd07e5?q=80&w=1600&auto=format&fit=crop" alt="Visit Sindoor Boutique">
+      <img src="images/Slideshow1.jpg" alt="Visit Sindoor Boutique">
     </div>
     <div class="ctatxt">
       <p class="quote">We have something to suit every taste — from the most traditional bridal look to modern,
@@ -1060,4 +390,7 @@
 </body>
 
 </html>
+
+
+
 

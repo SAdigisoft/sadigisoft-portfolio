@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAdigisoft Technologies | Digital Craftsmanship Portfolio</title>
+    <title>SAdigisoft Technologies | Digital Design Showcase</title>
     <meta name="description"
-        content="Portfolio of SAdigisoft Technologies - Premium Web Development and Digital Design Agency.">
+        content="Portfolio of SAdigisoft Technologies - Showcasing our premium web design concepts for Sindoor Boutique.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -52,17 +52,9 @@
 
         /* Hero Section */
         header {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 100px 0 60px;
             text-align: center;
-            position: relative;
             background: radial-gradient(circle at center, var(--navy) 0%, var(--primary) 70%);
-        }
-
-        .hero-content {
-            z-index: 2;
         }
 
         .logo-text {
@@ -76,9 +68,9 @@
         }
 
         h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             line-height: 1.1;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         span.highlight {
@@ -88,173 +80,169 @@
         .subtitle {
             font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 8rem 0;
-        }
-
-        .section-title {
+        /* Case Study Section */
+        .case-study-header {
+            margin-top: 4rem;
+            padding: 4rem 0;
+            border-top: 1px solid var(--glass-border);
             text-align: center;
-            margin-bottom: 5rem;
         }
 
-        .section-title h2 {
-            font-size: 3rem;
+        .case-study-header h2 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+        .client-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            display: block;
         }
 
-        .portfolio-grid {
+        /* Concept Grid */
+        .concept-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
         }
 
-        /* Project Card */
-        .project-card {
+        .concept-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
-            position: relative;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
+        .concept-card:hover {
+            transform: translateY(-8px);
             border-color: var(--gold);
-            background: rgba(184, 148, 58, 0.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .project-image {
-            height: 250px;
+        .concept-preview {
+            height: 240px;
             background-size: cover;
             background-position: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .project-image::after {
-            content: '';
+        .concept-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 60%, var(--primary));
+            inset: 0;
+            background: linear-gradient(to top, var(--primary), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
         }
 
-        .project-info {
-            padding: 2rem;
-        }
-
-        .project-category {
-            font-size: 0.8rem;
+        .concept-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 0.1rem;
-            margin-bottom: 0.5rem;
             font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .concept-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-description {
+        .concept-title {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+
+        .concept-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 2rem;
         }
 
-        .view-project {
-            display: flex;
+        .btn-view {
+            margin-top: auto;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            color: white;
             font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s;
+        }
+
+        .concept-card:hover .btn-view {
+            gap: 0.8rem;
             color: var(--gold);
-            margin-top: auto;
         }
 
-        .view-project svg {
-            transition: transform 0.3s ease;
+        /* Featured CTA */
+        .featured-cta {
+            background: var(--navy);
+            padding: 4rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 6rem;
+            border: 1px solid var(--gold);
         }
 
-        .project-card:hover .view-project svg {
-            transform: translateX(5px);
+        .featured-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Placeholder Styles */
-        .placeholder {
-            filter: grayscale(1);
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .placeholder:hover {
-            transform: none;
-            border-color: var(--glass-border);
-            background: var(--glass);
-            box-shadow: none;
-        }
-
-        .badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+        .btn-large {
+            display: inline-block;
             background: var(--accent);
-            padding: 0.4rem 1rem;
+            color: white;
+            padding: 1.2rem 2.5rem;
             border-radius: 50px;
-            font-size: 0.7rem;
             font-weight: 700;
+            text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
         }
 
-        /* Footer */
+        .btn-large:hover {
+            transform: scale(1.05);
+            background: #ff5a36;
+            box-shadow: 0 10px 20px rgba(232, 69, 34, 0.3);
+        }
+
         footer {
             padding: 4rem 0;
-            border-top: 1px solid var(--glass-border);
             text-align: center;
+            border-top: 1px solid var(--glass-border);
             color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        @media (max-width: 768px) {
+            .concept-grid {
+                grid-template-columns: 1fr;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .featured-cta {
+                padding: 2rem;
             }
-        }
-
-        .animate {
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.4s;
         }
     </style>
 </head>
@@ -262,83 +250,83 @@
 <body>
 
     <header>
-        <div class="container hero-content">
-            <span class="logo-text animate">SAdigisoft Technologies</span>
-            <h1 class="animate delay-1">Crafting <span class="highlight">Exceptional</span> Digital Experiences</h1>
-            <p class="subtitle animate delay-2">We build premium websites and digital solutions for visionary brands and
-                businesses worldwide.</p>
+        <div class="container text-center">
+            <span class="logo-text">SAdigisoft Technologies</span>
+            <h1>Digital <span class="highlight">Marketing</span> & Design Showcase</h1>
+            <p class="subtitle">Presenting premium design variations for the <strong>Sindoor Boutique</strong> digital
+                rebrand. Explore three unique aesthetic directions tailored for luxury retail.</p>
         </div>
     </header>
 
-    <main class="portfolio-section" id="work">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Selected works from our digital design and development studio</p>
-            </div>
+    <main class="container">
 
-            <div class="portfolio-grid">
-                <!-- Live Project: Sindoor -->
-                <a href="sindoor/index.html" class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1583305711719-20f78c95029e?q=80&w=1470&auto=format&fit=crop');">
-                        <!-- We'll use a placeholder image for now, but a screenshot would be better later -->
-                        <div class="badge">Live Demo</div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Fashion & Retail</span>
-                        <h3 class="project-title">Sindoor Boutique</h3>
-                        <p class="project-description">Premium boutique web experience featuring luxury slideshows and
-                            cultural saffron design aesthetics.</p>
-                        <div class="view-project">
-                            View Showcase
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Placeholder 1 -->
-                <div class="project-card placeholder">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop');">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Corporate</span>
-                        <h3 class="project-title">Project Alpha</h3>
-                        <p class="project-description">A high-performance fintech dashboard designed for clarity and
-                            scalability. Under development.</p>
-                        <div class="view-project" style="color: var(--text-muted);">
-                            Coming Soon
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Placeholder 2 -->
-                <div class="project-card placeholder">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop');">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">E-Commerce</span>
-                        <h3 class="project-title">Project Delta</h3>
-                        <p class="project-description">Next-generation shopping experience with seamless mobile-first
-                            interactions.</p>
-                        <div class="view-project" style="color: var(--text-muted);">
-                            Coming Soon
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="case-study-header">
+            <span class="client-logo">Sindoor Boutique</span>
+            <h2>Concept Exploration</h2>
+            <p class="subtitle">From deep editorial luxury to modern vibrant saffron — we explore the visual spectrum to
+                find the perfect fit for the brand's 35-year legacy.</p>
         </div>
+
+        <div class="concept-grid">
+            <!-- Concept 1 -->
+            <a href="sindoor/mockup1-dark-luxury.html" class="concept-card">
+                <div class="concept-preview" style="background-image: url('sindoor/images/Slideshow2.jpg');">
+                    <div class="concept-overlay">
+                        <span class="concept-tag">Direction A</span>
+                    </div>
+                </div>
+                <div class="concept-info">
+                    <h3 class="concept-title">Dark Luxury Editorial</h3>
+                    <p class="concept-desc">A high-fashion, high-contrast aesthetic using deep blacks, crimson accents,
+                        and editorial typography. Perfect for a premium bridal presence.</p>
+                    <span class="btn-view">Launch Experience →</span>
+                </div>
+            </a>
+
+            <!-- Concept 2 -->
+            <a href="sindoor/mockup2-blush.html" class="concept-card">
+                <div class="concept-preview" style="background-image: url('sindoor/images/Slideshow4.jpg');">
+                    <div class="concept-overlay">
+                        <span class="concept-tag">Direction B</span>
+                    </div>
+                </div>
+                <div class="concept-info">
+                    <h3 class="concept-title">Blush Editorial</h3>
+                    <p class="concept-desc">Soft, elegant, and warm. This palette uses ivory and blush tones to create a
+                        welcoming yet sophisticated boutique atmosphere.</p>
+                    <span class="btn-view">Launch Experience →</span>
+                </div>
+            </a>
+
+            <!-- Concept 3 -->
+            <a href="sindoor/mockup3-saffron.html" class="concept-card">
+                <div class="concept-preview" style="background-image: url('sindoor/images/Slideshow6.jpg');">
+                    <div class="concept-overlay">
+                        <span class="concept-tag">Direction C</span>
+                    </div>
+                </div>
+                <div class="concept-info">
+                    <h3 class="concept-title">Saffron Modern</h3>
+                    <p class="concept-desc">Bold, vibrant, and energetic. Combining cultural saffron heritage with
+                        clean, modern UI for a standout digital identity.</p>
+                    <span class="btn-view">Launch Experience →</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Final Version Section -->
+        <div class="featured-cta">
+            <h3>Final Presented Solution</h3>
+            <p class="subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 2.5rem;">The ultimate refined
+                version combining the best of all worlds into a high-performance immersive slideshow experience.</p>
+            <a href="sindoor/index.html" class="btn-large">View Final Presentation</a>
+        </div>
+
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 SAdigisoft Technologies. All rights reserved.</p>
+            <p>&copy; 2026 SAdigisoft Technologies. Crafted with Excellence.</p>
         </div>
     </footer>
 
