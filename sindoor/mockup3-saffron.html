@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sindoor Boutique — Saffron Modern</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --w: #FFFFFF;
+      --off: #FAFAFA;
+      --saf: #E8600A;
+      --safd: #C44A05;
+      --safp: #FDF0E8;
+      --ink: #1A1208;
+      --grey: #6E6458;
+      --bdr: #E8E0D8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--w);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .topbadge {
+      background: var(--safd);
+      color: #fff;
+      text-align: center;
+      padding: 9px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .topbar {
+      background: var(--saf);
+      color: #fff;
+      padding: 9px 60px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px;
+      height: 68px;
+      background: var(--w);
+      border-bottom: 1px solid var(--bdr);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logowrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .logo span {
+      color: var(--saf);
+    }
+
+    .lsub {
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--grey);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      height: 68px;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 0 18px;
+      position: relative;
+      transition: color .2s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      background: var(--saf);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .ncta {
+      background: var(--saf);
+      color: #fff !important;
+      padding: 0 28px !important;
+    }
+
+    .ncta::after {
+      display: none !important;
+    }
+
+    .ncta:hover {
+      background: var(--safd) !important;
+    }
+
+    /* HERO — full images left, text right */
+    .hero {
+      display: grid;
+      grid-template-columns: 58% 42%;
+      min-height: 92vh;
+    }
+
+    /* Left: hero image grid using Slideshow1 big + 2 small */
+    .hero-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1.6fr 1fr;
+      gap: 3px;
+    }
+
+    .hi {
+      position: relative;
+      overflow: hidden;
+      background: #E8DDD5;
+    }
+
+    .hi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .hi:hover img {
+      transform: scale(1.05);
+    }
+
+    .hi:first-child {
+      grid-column: span 2;
+    }
+
+    .hibadge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--saf);
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+    }
+
+    .hilbl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 16px;
+      background: linear-gradient(to top, rgba(26, 18, 8, 0.78), transparent);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-right {
+      padding: 70px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--off);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .yg {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 180px;
+      color: rgba(232, 96, 10, 0.05);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: var(--safp);
+      border: 1px solid rgba(232, 96, 10, 0.2);
+      color: var(--saf);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+    }
+
+    .tag.s {
+      background: var(--saf);
+      color: #fff;
+      border-color: var(--saf);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      color: var(--saf);
+      font-style: italic;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .hdesc {
+      font-size: 15px;
+      color: var(--grey);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 380px;
+      margin-bottom: 42px;
+    }
+
+    .ctarow {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .btns {
+      background: var(--saf);
+      color: #fff;
+      padding: 15px 34px;
+      font-size: 12px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background .3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btns:hover {
+      background: var(--safd);
+    }
+
+    .btng {
+      background: transparent;
+      color: var(--ink);
+      padding: 15px 34px;
+      font-size: 12px;
+      border: 1.5px solid var(--bdr);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all .3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btng:hover {
+      border-color: var(--ink);
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 36px;
+      border-top: 1px solid var(--bdr);
+    }
+
+    .ti {
+      text-align: center;
+      padding: 14px 10px;
+      border-right: 1px solid var(--bdr);
+    }
+
+    .ti:last-child {
+      border-right: none;
+    }
+
+    .tn {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--saf);
+      line-height: 1;
+    }
+
+    .tl {
+      font-size: 10px;
+      color: var(--grey);
+      margin-top: 4px;
+    }
+
+    /* OFFER CARDS */
+    .offer {
+      padding: 80px 60px;
+    }
+
+    .seye {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--saf);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .sh {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    .sh em {
+      font-style: italic;
+      color: var(--saf);
+    }
+
+    .ogrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .oc {
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .ocimg {
+      height: 300px;
+      overflow: hidden;
+      background: #E8DDD5;
+    }
+
+    .ocimg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .oc:hover .ocimg img {
+      transform: scale(1.08);
+    }
+
+    .ocbody {
+      padding: 22px 20px;
+      background: var(--off);
+      border-top: 3px solid var(--bdr);
+      transition: border-color .3s, background .3s;
+    }
+
+    .oc:hover .ocbody {
+      border-top-color: var(--saf);
+      background: var(--safp);
+    }
+
+    .onum {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      color: rgba(232, 96, 10, 0.1);
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .onm {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .od {
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.7;
+    }
+
+    /* FULL-BLEED BRIDAL FEATURE */
+    .bridal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+
+    .bimgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .bi {
+      overflow: hidden;
+      background: #E8DDD5;
+    }
+
+    .bi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bi:first-child {
+      grid-column: span 2;
+      height: 300px;
+    }
+
+    .bi.sm {
+      height: 220px;
+    }
+
+    .bcontent {
+      background: var(--saf);
+      padding: 70px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .beye {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .btitle {
+      font-family: 'DM Serif Display', serif;
+      font-size: 46px;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .btitle em {
+      font-style: italic;
+    }
+
+    .bbody {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      max-width: 360px;
+    }
+
+    .btnw {
+      background: #fff;
+      color: var(--saf);
+      padding: 15px 34px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
+
+    /* ALL 6 GALLERY STRIP */
+    .galstrip {
+      padding: 80px 60px 0;
+    }
+
+    .gshead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 34px;
+    }
+
+    .vlink {
+      color: var(--grey);
+      font-size: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--bdr);
+      padding-bottom: 4px;
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      height: 260px;
+    }
+
+    .gi {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: #E8DDD5;
+    }
+
+    .gi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .gi:hover img {
+      transform: scale(1.1);
+    }
+
+    .ghov {
+      position: absolute;
+      inset: 0;
+      background: rgba(232, 96, 10, 0);
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+      transition: background .4s;
+    }
+
+    .gi:hover .ghov {
+      background: rgba(232, 96, 10, 0.62);
+    }
+
+    .glbl {
+      font-family: 'DM Serif Display', serif;
+      font-size: 15px;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all .4s;
+    }
+
+    .gi:hover .glbl {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CONTACT / FOOTER */
+    .contact {
+      background: var(--ink);
+      padding: 80px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+      margin-top: 80px;
+    }
+
+    .cbrand .logo {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    .cbrand .logo span {
+      color: var(--saf);
+    }
+
+    .cbrand .lsub {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .cbrand p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.8;
+      margin-top: 16px;
+      max-width: 240px;
+    }
+
+    .cc h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .cc ul {
+      list-style: none;
+    }
+
+    .cc li {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cc li::before {
+      content: '→';
+      color: var(--saf);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .vbtn {
+      display: inline-block;
+      background: var(--saf);
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 22px;
+    }
+
+    .fbot {
+      background: #0E0C08;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbadge">✦ MOCKUP 3 — BOLD SAFFRON MODERN ✦</div>
+  <div class="topbar">
+    <span>📍 Coventry, UK &nbsp;·&nbsp; Mon–Sat 10am–6pm &nbsp;·&nbsp; Sun 11am–4pm</span>
+    <span>📞 024 7668 6037</span>
+  </div>
+
+  <nav>
+    <div class="logowrap">
+      <div class="logo">S<span>i</span>ndoor</div>
+      <div class="lsub">Boutique · Est. 1989</div>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Bridal</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="ncta">Book Visit</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-imgs">
+      <!-- Main hero — Slideshow1 full width -->
+      <div class="hi">
+        <div class="hibadge">New Season 2026</div>
+        <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Sindoor Boutique bridal collection">
+        <div class="hilbl">Bridal Collection</div>
+      </div>
+      <!-- Bottom two -->
+      <div class="hi">
+        <img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="Sindoor party wear">
+        <div class="hilbl">Party Wear</div>
+      </div>
+      <div class="hi">
+        <img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="Sindoor designer suits">
+        <div class="hilbl">Designer Suits</div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="yg">1989</div>
+      <div class="tags">
+        <div class="tag s">New Season</div>
+        <div class="tag">Bridal Specialists</div>
+        <div class="tag">35 Years</div>
+      </div>
+      <h1>
+        <span>Coventry's Premier</span>
+        <em>Asian Fashion</em>
+        <span>Boutique</span>
+      </h1>
+      <p class="hdesc">From bridal wear to everyday elegance — over 35 years of helping you look extraordinary on every
+        occasion.</p>
+      <div class="ctarow">
+        <a href="#" class="btns">Shop Collections</a>
+        <a href="#" class="btng">Book Appointment</a>
+      </div>
+      <div class="trust">
+        <div class="ti">
+          <div class="tn">35+</div>
+          <div class="tl">Years Trading</div>
+        </div>
+        <div class="ti">
+          <div class="tn">500+</div>
+          <div class="tl">Designs In Store</div>
+        </div>
+        <div class="ti">
+          <div class="tn">Free</div>
+          <div class="tl">Alterations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER CARDS -->
+  <section class="offer">
+    <div class="seye">What We Offer</div>
+    <div class="sh">Everything for <em>Every Occasion</em></div>
+    <div class="ogrid">
+      <div class="oc">
+        <div class="ocimg"><img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Bridal"></div>
+        <div class="ocbody">
+          <div class="onum">01</div>
+          <div class="onm">Bridal Wear</div>
+          <div class="od">Exquisite bridal collections for your most important day. Traditional and contemporary styles.
+          </div>
+        </div>
+      </div>
+      <div class="oc">
+        <div class="ocimg"><img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="Party wear"></div>
+        <div class="ocbody">
+          <div class="onum">02</div>
+          <div class="od">Stunning outfits for celebrations, functions, and proms. Something for every special occasion.
+          </div>
+          <div class="onm">Party Wear</div>
+        </div>
+      </div>
+      <div class="oc">
+        <div class="ocimg"><img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="Made to measure"></div>
+        <div class="ocbody">
+          <div class="onum">03</div>
+          <div class="onm">Made to Measure</div>
+          <div class="od">Tailored to your exact specs. Alterations in store at no extra cost, usually whilst you wait.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDAL FEATURE -->
+  <section class="bridal">
+    <div class="bimgs">
+      <div class="bi">
+        <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Bridal lehenga">
+      </div>
+      <div class="bi sm">
+        <img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="Bridal saree">
+      </div>
+      <div class="bi sm">
+        <img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="Bridal jewellery">
+      </div>
+    </div>
+    <div class="bcontent">
+      <div class="beye">Bridal Specialists · Since 1989</div>
+      <h2 class="btitle">Tailored to <em>Your Exact</em> Vision</h2>
+      <p class="bbody">We offer a wide range of bridal wear and unstitched suits, all tailored to your exact size. Any
+        ready-made item can be altered — usually whilst you wait, at no extra cost.</p>
+      <button class="btnw">Explore Bridal Collection</button>
+    </div>
+  </section>
+
+  <!-- ALL 6 IMAGES GALLERY STRIP -->
+  <section class="galstrip">
+    <div class="gshead">
+      <div>
+        <div class="seye">Gallery</div>
+        <div class="sh" style="font-size:40px;margin-bottom:0;">See Our <em>Collections</em></div>
+      </div>
+      <a href="#" class="vlink">Full gallery →</a>
+    </div>
+    <div class="strip">
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="1">
+        <div class="ghov">
+          <div class="glbl">Bridal</div>
+        </div>
+      </div>
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="2">
+        <div class="ghov">
+          <div class="glbl">Party Wear</div>
+        </div>
+      </div>
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="3">
+        <div class="ghov">
+          <div class="glbl">Designer</div>
+        </div>
+      </div>
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="4">
+        <div class="ghov">
+          <div class="glbl">Sarees</div>
+        </div>
+      </div>
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="5">
+        <div class="ghov">
+          <div class="glbl">Lenghas</div>
+        </div>
+      </div>
+      <div class="gi"><img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="6">
+        <div class="ghov">
+          <div class="glbl">Casual Wear</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section class="contact">
+    <div class="cbrand">
+      <div class="logo">S<span>i</span>ndoor</div>
+      <div class="lsub">Boutique · Est. 1989</div>
+      <p>Asian designer fashion in the heart of Coventry. Serving the community for over 35 years.</p>
+      <div class="vbtn">Visit Us Today</div>
+    </div>
+    <div class="cc">
+      <h4>Collections</h4>
+      <ul>
+        <li>Bridal Wear</li>
+        <li>Party Wear</li>
+        <li>Casual Wear</li>
+        <li>Unstitched Suits</li>
+        <li>Sarees & Lenghas</li>
+        <li>Jewellery & Bindis</li>
+      </ul>
+    </div>
+    <div class="cc">
+      <h4>Find Us</h4>
+      <ul>
+        <li>Coventry, UK</li>
+        <li>024 7668 6037</li>
+        <li>Mon–Sat: 10am – 6pm</li>
+        <li>Sunday: 11am – 4pm</li>
+      </ul>
+    </div>
+  </section>
+  <div class="fbot">
+    <span>© 2026 Sindoor Boutique. All rights reserved.</span>
+    <span>Asian Designer Fashion · Coventry · Est. 1989</span>
+  </div>
+</body>
+
+</html>

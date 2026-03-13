@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sindoor Boutique — Exquisite Asian Designer Fashion</title>
+    <meta name="description"
+        content="Sindoor Boutique: Over 35 years of excellence in Asian Designer fashion. Specializing in bridal, party, and custom made-to-measure outfits in Coventry, UK.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --deep: #0D0A08;
+            --wb: #141009;
+            --crimson: #8B1A1A;
+            --gold: #C9943A;
+            --gl: #E8C068;
+            --cream: #F5EDD8;
+            --muted: #9A8A70;
+            --white: #FFFFFF;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--deep);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header & Nav --- */
+        .top-announcement {
+            background: var(--crimson);
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 10, 8, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 148, 58, 0.1);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 100px;
+            /* Adjusted for banner1.jpg proportions */
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            filter: brightness(1.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--crimson);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--deep) !important;
+        }
+
+        /* --- Hero Slider --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .slide-container {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slide-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65);
+            transform: scale(1.1);
+            transition: transform 8s ease-out;
+        }
+
+        .slide.active .slide-img {
+            transform: scale(1);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 1s ease-out 0.5s;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .hero-eyebrow {
+            font-size: 12px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(48px, 7vw, 100px);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .hero-title em {
+            color: var(--gl);
+            font-style: italic;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--crimson);
+            color: var(--white);
+            padding: 18px 45px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--crimson);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 18px 45px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Slider Nav */
+        .slider-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 15px;
+        }
+
+        .dot {
+            width: 40px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--gold);
+            width: 60px;
+        }
+
+        /* --- Marquee --- */
+        .marquee {
+            background: var(--wb);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(201, 148, 58, 0.1);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee-content span {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-right: 50px;
+        }
+
+        .marquee-content span::after {
+            content: "✦";
+            margin-left: 50px;
+            color: var(--crimson);
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* --- About Section --- */
+        .section-padding {
+            padding: 120px 60px;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.5s var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border: 1px solid var(--gold);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .label {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 54px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .section-title em {
+            color: var(--crimson);
+            font-style: italic;
+        }
+
+        .about-text {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            border-top: 1px solid rgba(201, 148, 58, 0.2);
+            padding-top: 40px;
+        }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* --- Collections --- */
+        .collections {
+            background: var(--wb);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .grid-8 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .collection-item {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .collection-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--transition);
+        }
+
+        .collection-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .collection-item:hover .collection-overlay {
+            background: linear-gradient(to top, var(--crimson) 0%, transparent 80%);
+            opacity: 1;
+        }
+
+        .collection-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .view-collection {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .collection-item:hover .view-collection {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Services --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            background: rgba(201, 148, 58, 0.03);
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* --- CTA Section --- */
+        .cta {
+            background: linear-gradient(rgba(139, 26, 26, 0.9), rgba(139, 26, 26, 0.9)), url('http://www.sindoorboutique.com/images/Slideshow5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 100px 40px;
+        }
+
+        .cta-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #050505;
+            padding: 80px 60px 20px;
+            border-top: 1px solid rgba(201, 148, 58, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-info .logo {
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .footer-info p {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 320px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .contact-details {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .contact-details span {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            color: rgba(154, 138, 112, 0.4);
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* --- Animations --- */
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--transition);
+        }
+
+        [data-aos].active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                height: 70vh;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .grid-6 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            nav {
+                padding: 20px 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-6 {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .section-padding {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-announcement">✦ CELEBRATING OVER 35 YEARS OF EXCELLENCE ✦</div>
+
+    <header id="header">
+        <nav>
+            <a href="#" class="logo-container">
+                <img src="http://www.sindoorboutique.com/images/banner1.jpg" alt="Sindoor Boutique" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#" class="nav-cta">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SLIDER -->
+    <section class="hero">
+        <div class="slide-container" id="hero-slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Sindoor Boutique Bridal"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Coventry, UK • Established 1989</span>
+                    <h1 class="hero-title">Timeless <em>Bridal</em> Elegance</h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">View Collection</a>
+                        <a href="#" class="btn-secondary">Visit Store</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="Sindoor Boutique Designer"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Exquisite Craftsmanship</span>
+                    <h1 class="hero-title">Asian <em>Designer</em> Fashion</h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">Explore Designs</a>
+                        <a href="#" class="btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="Sindoor Boutique Couture"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Unmatched Quality</span>
+                    <h1 class="hero-title">Art of <em>Couture</em></h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">Start Order</a>
+                        <a href="#" class="btn-secondary">Gallery</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="Sindoor Boutique Party Wear"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Every Occasion</span>
+                    <h1 class="hero-title">Premier <em>Party</em> Wear</h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">Shop Styles</a>
+                        <a href="#" class="btn-secondary">In Store</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="Sindoor Boutique Made to Measure"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Perfect Fit</span>
+                    <h1 class="hero-title">Made to <em>Measure</em></h1>
+                    <div class="hero-btns">
+                        <a href="#services" class="btn-primary">Our Process</a>
+                        <a href="#" class="btn-secondary">Consultation</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="Sindoor Boutique Selection"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Infinite Styles</span>
+                    <h1 class="hero-title">Wear Your <em>Heritage</em></h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">New Arrivals</a>
+                        <a href="#" class="btn-secondary">Directions</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 7 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow7.jpg" alt="Sindoor Boutique Luxury"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Luxury Redefined</span>
+                    <h1 class="hero-title">Elegance in <em>Every Stitch</em></h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">Browse Gallery</a>
+                        <a href="#" class="btn-secondary">Our Boutique</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 8 -->
+            <div class="slide">
+                <img src="http://www.sindoorboutique.com/images/Slideshow8.jpg" alt="Sindoor Boutique Traditions"
+                    class="slide-img">
+                <div class="slide-content">
+                    <span class="hero-eyebrow">Since 1989</span>
+                    <h1 class="hero-title">Modern <em>Traditions</em></h1>
+                    <div class="hero-btns">
+                        <a href="#collections" class="btn-primary">Discover More</a>
+                        <a href="#" class="btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>Bridal Wear</span>
+            <span>Lenghas & Dresses</span>
+            <span>Unstitched Suits</span>
+            <span>Made to Measure</span>
+            <span>Jewellery & Handbags</span>
+            <span>Sarees</span>
+            <span>Party Wear</span>
+            <span>Casual Wear</span>
+            <!-- Repeat for seamless loop -->
+            <span>Bridal Wear</span>
+            <span>Lenghas & Dresses</span>
+            <span>Unstitched Suits</span>
+            <span>Made to Measure</span>
+            <span>Jewellery & Handbags</span>
+            <span>Sarees</span>
+            <span>Party Wear</span>
+            <span>Casual Wear</span>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding about" id="about">
+        <div class="about-image" data-aos>
+            <img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="About Sindoor Boutique">
+        </div>
+        <div class="about-content" data-aos>
+            <span class="label">Our Legacy</span>
+            <h2 class="section-title">35 Years of <em>Asian Fashion</em></h2>
+            <p class="about-text">
+                With over 35 years of experience, Sindoor Boutique is at the forefront of Asian Designer fashion. We
+                specialise in bridal, party and casual wear; in addition to exquisite made to measure outfits. If you
+                have a special occasion, function, or prom coming up, why not pay us a visit. Sindoor Boutique offers a
+                very special service and we have something to suit every taste. Any ready made item purchased in store
+                can be altered to your specification at no extra cost usually whilst you wait.
+            </p>
+            <p class="about-text">
+                We also offer a wide range of unstitched suits, all of which can be tailored to your exact size and
+                specification to ensure that your outfit fits perfectly on that special day. A dry cleaning service is
+                also provided in store (terms and conditions apply).
+            </p>
+            <div class="about-stats">
+                <div>
+                    <div class="stat-num">35+</div>
+                    <div class="stat-label">Years of Mastery</div>
+                </div>
+                <div>
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Quality Guaranteed</div>
+                </div>
+                <div>
+                    <div class="stat-num">Free</div>
+                    <div class="stat-label">Alterations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTIONS SECTION -->
+    <section class="section-padding collections" id="collections">
+        <div class="section-header" data-aos>
+            <span class="label">The Collections</span>
+            <h2 class="section-title">Explore <em>Our World</em></h2>
+        </div>
+        <div class="grid-8">
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Bridal Wear">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Bridal Wear</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="Designer Suits">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Designer Suits</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="Party Wear">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Party Wear</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="Sarees">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Sarees</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="Lenghas">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Lenghas</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="Casual Wear">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Casual Wear</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow7.jpg" alt="Couture">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Couture</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+            <div class="collection-item" data-aos>
+                <img src="http://www.sindoorboutique.com/images/Slideshow8.jpg" alt="Accessories">
+                <div class="collection-overlay">
+                    <h3 class="collection-name">Accessories</h3>
+                    <span class="view-collection">Explore →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section-padding" id="services">
+        <div class="section-header" data-aos>
+            <span class="label">Bespoke Services</span>
+            <h2 class="section-title">Tailored to <em>You</em></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos>
+                <span class="service-icon">✂</span>
+                <h3>Made to Measure</h3>
+                <p>We offer a wide range of unstitched suits, all of which can be tailored to your exact size and
+                    specification to ensure perfect fit.</p>
+            </div>
+            <div class="service-card" data-aos>
+                <span class="service-icon">✨</span>
+                <h3>Free Alterations</h3>
+                <p>Any ready-made item purchased in store can be altered at no extra cost, usually whilst you wait in
+                    our comfortable store.</p>
+            </div>
+            <div class="service-card" data-aos>
+                <span class="service-icon">🫧</span>
+                <h3>Dry Cleaning</h3>
+                <p>Expert dry cleaning service provided in-store for your most delicate and treasured garments (T&Cs
+                    apply).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta" data-aos>
+        <div class="cta-inner">
+            <h2>Experience the Luxury of Choice</h2>
+            <a href="#" class="btn-primary">Visit Our Coventry Boutique</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <img src="http://www.sindoorboutique.com/images/banner1.jpg" alt="Sindoor Boutique"
+                    style="height: 60px; width: auto; margin-bottom: 20px;">
+                <p>Coventry's leading destination for Asian designer bridal, party, and luxury fashion for over 35
+                    years.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">Bridal</a></li>
+                    <li><a href="#">Party Wear</a></li>
+                    <li><a href="#">Sarees</a></li>
+                    <li><a href="#">Jewellery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us</h4>
+                <div class="contact-details">
+                    <span>Coventry, United Kingdom</span>
+                    <span>Phone: 024 7668 6037</span>
+                    <span>Mon - Sat: 10:00 - 18:00</span>
+                    <span>Sun: 11:00 - 16:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Sindoor Boutique. All rights reserved.</span>
+            <span>Designed for Excellence</span>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slider Logic
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const slideInterval = 6000;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        let slideTimer = setInterval(nextSlide, slideInterval);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideTimer);
+                showSlide(index);
+                slideTimer = setInterval(nextSlide, slideInterval);
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.backgroundColor = 'rgba(13, 10, 8, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.backgroundColor = 'rgba(13, 10, 8, 0.95)';
+            }
+        });
+
+        // Simple AOS (Animate on Scroll)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sindoor Boutique — Blush Editorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Outfit:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #FAF6F0;
+      --warm: #FFF8F2;
+      --blush: #E8A89C;
+      --rose: #B5433A;
+      --rosed: #8A2820;
+      --char: #2C2218;
+      --mid: #7A6558;
+      --gold: #B8863A;
+      --bdr: #EDE5DB;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--warm);
+      color: var(--char);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .topbadge {
+      background: var(--rose);
+      color: #fff;
+      text-align: center;
+      padding: 9px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px;
+      height: 68px;
+      background: var(--warm);
+      border-bottom: 1px solid var(--bdr);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--char);
+    }
+
+    .logo span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      height: 68px;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: var(--mid);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 300;
+      padding: 0 18px;
+      transition: color .3s;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 18px;
+      right: 18px;
+      height: 2px;
+      background: var(--rose);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--rose);
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nbook {
+      background: var(--rose) !important;
+      color: #fff !important;
+    }
+
+    .nbook::after {
+      display: none !important;
+    }
+
+    /* HERO — editorial split */
+    .hero {
+      display: grid;
+      grid-template-columns: 48% 52%;
+      min-height: 90vh;
+    }
+
+    .hero-left {
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 168, 156, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184, 134, 58, 0.1);
+      border: 1px solid rgba(184, 134, 58, 0.3);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      color: var(--rose);
+      font-style: italic;
+      display: block;
+    }
+
+    .hdesc {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 380px;
+      margin-bottom: 42px;
+    }
+
+    .hbtns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btnr {
+      background: var(--rose);
+      color: #fff;
+      padding: 15px 34px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: background .3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btnr:hover {
+      background: var(--rosed);
+    }
+
+    .btno {
+      background: transparent;
+      color: var(--char);
+      padding: 15px 34px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      border: 1.5px solid var(--char);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: all .3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btno:hover {
+      background: var(--char);
+      color: #fff;
+    }
+
+    .hphone {
+      margin-top: 42px;
+      padding-top: 32px;
+      border-top: 1px solid var(--bdr);
+    }
+
+    .hphone .lbl {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--mid);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .hphone strong {
+      font-size: 22px;
+      color: var(--char);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero right — large top + 2 small bottom */
+    .hero-right {
+      display: grid;
+      grid-template-rows: 1.4fr 1fr;
+      gap: 3px;
+      background: var(--bdr);
+    }
+
+    .htop {
+      position: relative;
+      overflow: hidden;
+      background: #D4C8BC;
+    }
+
+    .htop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .htop:hover img {
+      transform: scale(1.04);
+    }
+
+    .hbotrow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .hbot {
+      position: relative;
+      overflow: hidden;
+      background: #C8BCB0;
+    }
+
+    .hbot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .hbot:hover img {
+      transform: scale(1.05);
+    }
+
+    .hbadge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--rose);
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+    }
+
+    .hcap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(44, 34, 24, 0.72), transparent);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    /* SERVICES STRIP */
+    .strip {
+      background: var(--char);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .si {
+      padding: 28px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+      transition: background .3s;
+      cursor: pointer;
+    }
+
+    .si:last-child {
+      border-right: none;
+    }
+
+    .si:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sic {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .snm {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .ssb {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 1px;
+    }
+
+    /* GALLERY MOSAIC */
+    .gallery {
+      padding: 88px 60px;
+    }
+
+    .gh {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 38px;
+    }
+
+    .seye {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--rose);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .sh {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .sh em {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .vl {
+      color: var(--mid);
+      font-size: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--bdr);
+      padding-bottom: 4px;
+    }
+
+    /* Mosaic: 3 wide col + rows — use all 6 images */
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 300px 300px;
+      gap: 6px;
+    }
+
+    .mc {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: #DDD5C8;
+    }
+
+    .mc img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s;
+    }
+
+    .mc:hover img {
+      transform: scale(1.07);
+    }
+
+    .mc:first-child {
+      grid-row: span 2;
+    }
+
+    .mov {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 34, 24, 0);
+      transition: background .4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+    }
+
+    .mc:hover .mov {
+      background: rgba(44, 34, 24, 0.52);
+    }
+
+    .ml {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #fff;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all .4s;
+    }
+
+    .mc:hover .ml {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 88px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+      background: var(--ivory);
+    }
+
+    .aimgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      position: relative;
+    }
+
+    .aimgs::after {
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      width: 150px;
+      height: 150px;
+      border: 2px solid rgba(181, 67, 58, 0.18);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .aim-main {
+      grid-column: span 2;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .aim-sm {
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .aimgs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .atag {
+      display: inline-block;
+      background: rgba(184, 134, 58, 0.1);
+      border: 1px solid rgba(184, 134, 58, 0.3);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      margin-bottom: 22px;
+    }
+
+    .abody {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.9;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .div {
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rose), var(--blush));
+      margin: 26px 0;
+    }
+
+    .s2c {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .sr {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--mid);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(184, 134, 58, 0.1);
+    }
+
+    .sr::before {
+      content: '♦';
+      color: var(--rose);
+      font-size: 8px;
+      flex-shrink: 0;
+    }
+
+    /* QUOTE BAND */
+    .qband {
+      padding: 76px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .qband::before {
+      content: '"';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 320px;
+      color: rgba(232, 168, 156, 0.1);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .qt {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto 18px;
+      line-height: 1.55;
+      position: relative;
+      z-index: 1;
+    }
+
+    .qa {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--mid);
+      text-transform: uppercase;
+    }
+
+    /* CONTACT BAND */
+    .cband {
+      background: var(--rose);
+      padding: 58px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .cband h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .cband h3 em {
+      font-style: italic;
+    }
+
+    .cdets {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .cd .lbl {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 5px;
+    }
+
+    .cd .val {
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+    }
+
+    footer {
+      background: var(--char);
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .fl .logo {
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    .fl p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.8;
+      max-width: 260px;
+    }
+
+    .fc h4 {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 20px;
+    }
+
+    .fc ul {
+      list-style: none;
+    }
+
+    .fc li {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 10px;
+    }
+
+    .fbot {
+      background: var(--char);
+      padding: 18px 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbadge">✦ MOCKUP 2 — BLUSH EDITORIAL ✦</div>
+
+  <nav>
+    <div class="logo">S<span>i</span>ndoor Boutique</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Bridal</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="nbook">Book Visit</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge">✦ Est. 1989 · Coventry, UK</div>
+      <h1>Asian Fashion, <em>Made Personal</em></h1>
+      <p class="hdesc">35 years of expertise in bridal, party, and bespoke made-to-measure fashion. For every occasion,
+        every taste, every you.</p>
+      <div class="hbtns">
+        <a href="#" class="btnr">Explore Collections</a>
+        <a href="#" class="btno">Our Story</a>
+      </div>
+      <div class="hphone">
+        <div class="lbl">Call Us</div>
+        <strong>024 7668 6037</strong>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="htop">
+        <div class="hbadge">Bridal 2026</div>
+        <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Sindoor Boutique bridal collection">
+        <div class="hcap">Bridal Collection</div>
+      </div>
+      <div class="hbotrow">
+        <div class="hbot">
+          <img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="Party wear Sindoor">
+          <div class="hcap">Party Wear</div>
+        </div>
+        <div class="hbot">
+          <img src="http://www.sindoorboutique.com/images/Slideshow6.jpg" alt="Designer suits Sindoor">
+          <div class="hcap">Designer Suits</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES STRIP -->
+  <div class="strip">
+    <div class="si"><span class="sic">👰</span>
+      <div class="snm">Bridal Wear</div>
+      <div class="ssb">Full collections</div>
+    </div>
+    <div class="si"><span class="sic">✨</span>
+      <div class="snm">Party Wear</div>
+      <div class="ssb">Every occasion</div>
+    </div>
+    <div class="si"><span class="sic">📐</span>
+      <div class="snm">Made to Measure</div>
+      <div class="ssb">Tailored for you</div>
+    </div>
+    <div class="si"><span class="sic">💎</span>
+      <div class="snm">Jewellery</div>
+      <div class="ssb">Complete the look</div>
+    </div>
+    <div class="si"><span class="sic">🧺</span>
+      <div class="snm">Dry Cleaning</div>
+      <div class="ssb">In-store service</div>
+    </div>
+  </div>
+
+  <!-- MOSAIC GALLERY — all 6 images -->
+  <section class="gallery">
+    <div class="gh">
+      <div>
+        <div class="seye">Our Collections</div>
+        <div class="sh">Dressed for Every <em>Special Moment</em></div>
+      </div>
+      <a href="#" class="vl">View full gallery →</a>
+    </div>
+    <div class="mosaic">
+      <div class="mc">
+        <img src="http://www.sindoorboutique.com/images/Slideshow1.jpg" alt="Bridal">
+        <div class="mov">
+          <div class="ml">Bridal Wear</div>
+        </div>
+      </div>
+      <div class="mc">
+        <img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="Collection 2">
+        <div class="mov">
+          <div class="ml">Party Wear</div>
+        </div>
+      </div>
+      <div class="mc">
+        <img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="Collection 3">
+        <div class="mov">
+          <div class="ml">Designer Suits</div>
+        </div>
+      </div>
+      <div class="mc">
+        <img src="http://www.sindoorboutique.com/images/Slideshow4.jpg" alt="Collection 4">
+        <div class="mov">
+          <div class="ml">Sarees</div>
+        </div>
+      </div>
+      <div class="mc">
+        <img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="Collection 5">
+        <div class="mov">
+          <div class="ml">Lenghas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="aimgs">
+      <div class="aim-main">
+        <img src="http://www.sindoorboutique.com/images/Slideshow2.jpg" alt="Sindoor Boutique">
+      </div>
+      <div class="aim-sm">
+        <img src="http://www.sindoorboutique.com/images/Slideshow3.jpg" alt="Collection">
+      </div>
+      <div class="aim-sm">
+        <img src="http://www.sindoorboutique.com/images/Slideshow5.jpg" alt="Jewellery">
+      </div>
+    </div>
+    <div>
+      <div class="atag">Est. 1989 — Coventry</div>
+      <div class="seye">Our Story</div>
+      <div class="sh" style="font-size:42px;margin-bottom:20px;">Over 35 Years of <em>Crafted Beauty</em></div>
+      <p class="abody">With over 35 years of experience, Sindoor Boutique is at the forefront of Asian Designer fashion.
+        We specialise in bridal, party and casual wear; in addition to exquisite made-to-measure outfits.</p>
+      <p class="abody">Any ready-made item purchased in store can be altered to your specification at no extra cost,
+        usually whilst you wait. We also offer unstitched suits tailored to your exact size.</p>
+      <div class="div"></div>
+      <div class="s2c">
+        <div class="sr">Bridal Wear</div>
+        <div class="sr">Lenghas & Dresses</div>
+        <div class="sr">Party Wear</div>
+        <div class="sr">Jewellery & Bindis</div>
+        <div class="sr">Unstitched Suits</div>
+        <div class="sr">Dry Cleaning</div>
+      </div>
+      <div style="margin-top:32px;"><a href="#" class="btnr">Visit Us Today</a></div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="qband">
+    <p class="qt">"We have something to suit every taste — from the most traditional bridal look to modern,
+      fashion-forward designs that turn heads."</p>
+    <div class="qa">Sindoor Boutique · Since 1989</div>
+  </section>
+
+  <!-- CONTACT BAND -->
+  <section class="cband">
+    <h3>Come <em>Visit Us</em> in Coventry</h3>
+    <div class="cdets">
+      <div class="cd">
+        <div class="lbl">Phone</div>
+        <div class="val">024 7668 6037</div>
+      </div>
+      <div class="cd">
+        <div class="lbl">Location</div>
+        <div class="val">Coventry, UK</div>
+      </div>
+      <div class="cd">
+        <div class="lbl">Hours</div>
+        <div class="val">Mon–Sat 10–6</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fl">
+      <div class="logo">S<span>i</span>ndoor Boutique</div>
+      <p>Asian designer fashion in Coventry. Over 35 years of craftsmanship, passion and community.</p>
+    </div>
+    <div class="fc">
+      <h4>Collections</h4>
+      <ul>
+        <li>Bridal Wear</li>
+        <li>Party Wear</li>
+        <li>Casual Wear</li>
+        <li>Sarees & Lenghas</li>
+        <li>Unstitched Suits</li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li>024 7668 6037</li>
+        <li>Coventry, UK</li>
+        <li>Mon–Sat: 10am–6pm</li>
+        <li>Sunday: 11am–4pm</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="fbot">
+    <span>© 2026 Sindoor Boutique</span>
+    <span>Asian Designer Fashion · Coventry</span>
+  </div>
+</body>
+
+</html>
